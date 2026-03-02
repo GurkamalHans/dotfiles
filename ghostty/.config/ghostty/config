@@ -1,1 +1,2 @@
-../../dotfiles/ghostty/.config/ghostty/config
+theme = Catppuccin Mocha
+background-opacity = 0.95

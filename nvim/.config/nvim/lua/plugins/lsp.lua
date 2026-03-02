@@ -40,6 +40,8 @@ return {
 	},
   { -- optional blink completion source for require statements and module annotations
     "saghen/blink.cmp",
+    dependencies = { "rafamadriz/friendly-snippets" },
+    version = "1.*",
     opts = {
       sources = {
         -- add lazydev to your completion providers
@@ -53,6 +55,7 @@ return {
           },
         },
       },
+      fuzzy = { implementation = "prefer_rust_with_warning" }
     },
   },
 	{
@@ -63,8 +66,8 @@ return {
 				sources = {
 					null_ls.builtins.formatting.stylua,
           null_ls.builtins.diagnostics.kubelinter,
-          null_ls.builtins.formatting.actionlint,
-          null_ls.builtins.diagnostics.prettier,
+          null_ls.builtins.diagnostics.actionlint,
+          null_ls.builtins.formatting.prettier,
 				},
 			})
 			vim.keymap.set("n", "<leader>gf", "<cmd>lua vim.lsp.buf.format({ async = true })<cr>", {})
