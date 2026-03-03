@@ -15,7 +15,7 @@ return {
 				config = function()
 					vim.lsp.enable("lua_ls")
 					vim.lsp.enable("gh_actions_ls")
-          vim.lsp.enable("yamlls")
+					vim.lsp.enable("yamlls")
 					vim.diagnostic.config({
 						virtual_text = true,
 						signs = true,
@@ -38,26 +38,26 @@ return {
 			},
 		},
 	},
-  { -- optional blink completion source for require statements and module annotations
-    "saghen/blink.cmp",
-    dependencies = { "rafamadriz/friendly-snippets" },
-    version = "1.*",
-    opts = {
-      sources = {
-        -- add lazydev to your completion providers
-        default = { "lazydev", "lsp", "path", "snippets", "buffer" },
-        providers = {
-          lazydev = {
-            name = "LazyDev",
-            module = "lazydev.integrations.blink",
-            -- make lazydev completions top priority (see `:h blink.cmp`)
-            score_offset = 100,
-          },
-        },
-      },
-      fuzzy = { implementation = "prefer_rust_with_warning" }
-    },
-  },
+	{ -- optional blink completion source for require statements and module annotations
+		"saghen/blink.cmp",
+		dependencies = { "rafamadriz/friendly-snippets" },
+		version = "1.*",
+		opts = {
+			sources = {
+				-- add lazydev to your completion providers
+				default = { "lazydev", "lsp", "path", "snippets", "buffer" },
+				providers = {
+					lazydev = {
+						name = "LazyDev",
+						module = "lazydev.integrations.blink",
+						-- make lazydev completions top priority (see `:h blink.cmp`)
+						score_offset = 100,
+					},
+				},
+			},
+			fuzzy = { implementation = "prefer_rust_with_warning" },
+		},
+	},
 	{
 		"nvimtools/none-ls.nvim",
 		config = function()
@@ -65,9 +65,9 @@ return {
 			null_ls.setup({
 				sources = {
 					null_ls.builtins.formatting.stylua,
-          null_ls.builtins.diagnostics.kubelinter,
-          null_ls.builtins.diagnostics.actionlint,
-          null_ls.builtins.formatting.prettier,
+					null_ls.builtins.diagnostics.kubelinter,
+					null_ls.builtins.diagnostics.actionlint,
+					null_ls.builtins.formatting.prettier,
 				},
 			})
 			vim.keymap.set("n", "<leader>gf", "<cmd>lua vim.lsp.buf.format({ async = true })<cr>", {})

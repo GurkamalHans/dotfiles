@@ -9,10 +9,10 @@
     "hyprland/workspaces": {
          "disable-scroll": true,
          "sort-by-name": true,
-         "format": " {icon} ",
-         "format-icons": {
-             "default": "",
-         },
+    //     "format": " {icon} ",
+    //     "format-icons": {
+    //         "default": "",
+    //     },
      },
     "tray": {
         "icon-size": 21,
